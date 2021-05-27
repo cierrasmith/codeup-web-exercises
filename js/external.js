@@ -20,3 +20,16 @@ var products = confirm("Are you buying more than 2 items?");
 var premium = confirm("Are you a premium member?")
 var expired = confirm("Is the offer expired?");
 alert("Offer applied:" + (products && !expired) || premium);
+
+var username = 'codeup';
+var password = 'notastrongpassword';
+
+var password_is_five_characters = password.length >= 5;
+var username_not_included = !password.includes(username);
+var username_less_than_20_chars = username.length < 20;
+var contains_no_whitespace = password === password.trim();
+
+console.log(password_is_five_characters);
+console.log(username_not_included);
+console.log(username_less_than_20_chars);
+console.log(contains_no_whitespace);
