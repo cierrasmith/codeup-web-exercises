@@ -155,11 +155,22 @@ alert("Your price before the discount was " + totalBill);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-var enterNumber = confirm("Would you like to enter a number?");
+var answer = confirm("Would you like to enter a number?");
 
-if (enterNumber) {
-    prompt("Input a number");
-    alert();
-    alert(enterNumber + 100);
-    alert()
-}
+if (answer) {
+    var number = prompt("Input a number");
+    if (isNaN(number)) {
+        alert ("You didn't enter a number")
+    } else {
+        if (number % 2 == 0) {
+            alert("Your number is even");
+        } else {
+            alert("Your number is odd");
+        }
+        alert("100 + your number is:" + Number(number+100));
+        if (number < 0) {
+            alert("Your number is negative");
+        } else {
+            alert("Your number is positive");
+        }
+    }
