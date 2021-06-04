@@ -49,9 +49,6 @@ generatePyramid();
     console.log(number.toString());
 }
 */
-var message = '';
-
-for (let index = 5; index < 100; index-5) {
-    message = message + "index is: " + index + "\n";
-    console.log(index);
+for (let i = 100; i >= 5; i = (i - 5)) {
+    console.log(i);
 }
