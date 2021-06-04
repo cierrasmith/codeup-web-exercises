@@ -157,7 +157,7 @@ alert("Your price before the discount was " + totalBill);
  */
 var answer = confirm("Would you like to enter a number?");
 
-if (answer) {
+if (answer)
     var number = prompt("Input a number");
     if (isNaN(number)) {
         alert ("You didn't enter a number")
@@ -167,7 +167,7 @@ if (answer) {
         } else {
             alert("Your number is odd");
         }
-        alert("100 + your number is:" + Number(number+100));
+        alert("100 + your number is:" + Number(number + 100));
         if (number < 0) {
             alert("Your number is negative");
         } else {
