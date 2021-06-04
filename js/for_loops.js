@@ -48,7 +48,14 @@ generatePyramid();
     }
     console.log(number.toString());
 }
+
+same pyramid output:
+for (var index = 1, number =""; index < 10;index++) {
+    number += "1";
+    console.log(index * number)
+}
 */
+
 for (let i = 100; i >= 5; i = (i - 5)) {
     console.log(i);
 }
