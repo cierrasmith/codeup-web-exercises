@@ -1,9 +1,14 @@
 //alert("This page is working");
 
-var index = 2;
+/*
+let index = 2;
 
-while (index < (index * 2)) {
+while (index < 65537) {
     //do something
-    console.log(index + "\n");
-    index++;
+    console.log(index);
+    index = index * 2;
 }
+ */
+
+//Ice cream cone do while exercise
+
