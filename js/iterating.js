@@ -10,7 +10,6 @@
      */
 
     var names = ["Deku", "Todoroki", "Bakugo", "Froppy"];
-    console.log (names);
 
     /**
      * TODO:
@@ -45,8 +44,8 @@
          * Refactor your above code to use a `forEach` loop
          */
 
-        names.forEach(function(name) {
-            console.log("The name of this person is: " + name + ".");
+    names.forEach(function(name) {
+       console.log("The name of this person is: " + name + ".");
         });
 
         /**
@@ -63,15 +62,20 @@
          *  > last([1, 2, 3, 4, 5]) // return 5
          */
 
-        let first = ([1, 2, 3, 4, 5]);
-            console.log(first[0]);
+        function first(array) {
+            return array[0];
+        }
 
-        let second = ([1, 2, 3, 4, 5]);
-            console.log(second[1]);
+        function second(array) {
+            return array[1];
+        }
 
-        let last = ([1, 2, 3, 4, 5]);
-            console.log(last[4]);
-
+        function last(array) {
+            return array[array.length -1];
+        }
+        console.log(first([1, 2, 3, 4, 5]));
+        console.log(second([1, 2, 3, 4, 5]));
+        console.log(last([1, 2, 3, 4, 5]));
 
     }
 })();
