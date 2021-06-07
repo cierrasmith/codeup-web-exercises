@@ -39,3 +39,14 @@ shapes.forEach(function(shape) {
 for (let number = 0; number < shapes.length; number++) {
     console.log("Here is a lovely shape: " + shapes[number] + ".");
 }
+
+//  .push() adds to the end of the array
+//  .unshift() adds to the beginning of the array
+//  .pop() removes the last element of the array
+//  .shift() removes an element from the array
+//  .indexOf('string') targets a specific element
+//  .lastIndexOf('string') gives the last element
+//  .reverse() flips the array around
+//  .sort() sorts the array in alphabetical order
+//  .join() joins all individual elements to a single string
+//  .splice() remove and/or replace elements
