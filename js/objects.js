@@ -57,6 +57,8 @@
     // 12% discount if they spend > $200
     // display name, amt before discount, the discount (if any), and amt after discount
 
+    // add .toFixed(2) to have the amount with 2 decimal places
+
     shoppers.forEach(function (shopper) {
         var discount = shopper.amount * 0.12;
         var newTotal = shopper.amount - discount;
@@ -90,7 +92,7 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
+    let books = [
 
         {
             title: "Harry Potter",
@@ -178,8 +180,22 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(book ) {
-        console.log(books[i].title + books[i].author.firstName + books[i].author.lastName);
+    function createBook(title, author) {
+        let name = author.split(" ")
+        let firstName = name[0];
+        let lastName = name[1];
+        return {
+            title : title,
+            author : {
+                firstName: firstName,
+                lastName: lastName
+            }
+        }
     }
-    createBook();
+
+    console.log(createBook("book", "author"));
+
 })();
+
+
+// You can also push multiple values in a single push method, separated by commas
