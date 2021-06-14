@@ -1,7 +1,37 @@
-.fancy-header {
-    color: purple;
+h1 {
+    text-align: center;
 }
 
-#container h2 {
-    color: blue;
+h1, h2 {
+    color: purple;
+    text-decoration: underline;
+}
+
+body {
+    background-color: darkgrey;
+    background-image: url("../img/subtle.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul > li {
+    list-style-type: square;
+}
+
+td, tr {
+    padding: 10px;
+    font-size: 1em;
+}
+
+a:hover {
+    color: darkorange;
+    font-size: 1.2em;
+    transition: 500ms;
+}
+
+a:visited {
+    color: darkgreen;
 }

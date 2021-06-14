@@ -1,5 +1,5 @@
 /* selector for id="container" */
-.container {
+#container {
     margin: 50px auto;
     width: 500px;
     padding: 10px;
@@ -14,7 +14,7 @@
 }
 
 /* selector for all "em" elements */
-.italic {
+em {
     font-weight: bold;
 }
 
