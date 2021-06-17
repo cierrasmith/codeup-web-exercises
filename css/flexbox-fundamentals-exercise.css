@@ -126,6 +126,7 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     flex-wrap: wrap;
+    align-content: space-evenly;
     justify-content: space-between;
     align-items: center;
 
