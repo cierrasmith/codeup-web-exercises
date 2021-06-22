@@ -1,9 +1,14 @@
-.jumbotron-fluid {
+.jumbotron {
         position: relative;
-        text-align: center;
         color: black;
         background-color: transparent;
-    }
+        margin: auto;
+}
+
+.jumbotron > img {
+        width: 100%;
+}
+
 
 .display-4 {
         position: absolute;
