@@ -32,3 +32,27 @@ function multiplyTwoNumbers(myParameter1, myParameter2) {
 }
 console.log("call to multiply 2 numbers is : " + multiplyTwoNumbers(4, 5));
 console.log("call to multiply 2 numbers is : " + multiplyTwoNumbers(6, 7));
+
+function firstAndLastName(firstName, lastName) {
+    if(firstName.length < 1) {
+        console.log("ERROR: first name cannot be blank");
+        return "";
+    }
+    return firstName + " " + lastName;
+}
+
+// return shortened version of full name given first and last name
+// i.e., at most 10 characters of full name
+// if name is longer than 10 chars, return first 7 chars and ...
+function shortenFullName(firstName, lastName) {
+    var shortName = firstAndLastName(firstName, lastName);
+
+    // if shortName has more than 10 chars, then shorten it with ...
+    if(shortName.length > 10) {
+        var shorterName = shortName.substr(0, 7);
+        return shorterName + "...";
+    }
+    return shortName;
+}
+
+console.log(shortenFullName("squilliam", "fancyson"));
