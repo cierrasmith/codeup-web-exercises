@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Lecture</title>
+</head>
+<body>
+<script>
+
+  var potentialResults = ["How to basic", "how to bake a cake", "I need help changing my brakes"];
+
+  var searchBarElement = document.getElementByID("searchBar")
+
+  searchBarElement.addEventListener("change", function () {
+
+      potentialResults.forEach(function(result) {
+
+          var whatUserIsSearchingFor = searchBarElement.value
+
+          if (result.toLowerCase().includes(whatUserIsSearchingFor.toLowerCase())) {
+              console.log("Here is a potential result...")
+              console.log(result)
+          }
+      })
+  }
+
+
+
+</script>
+</body>
+</html>
