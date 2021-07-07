@@ -64,3 +64,8 @@ var personThree = {
     ageInYears: 25,
     heightInInches: 62
 }
+personThree.intro = function () {
+    var fullName = this.firstName[0].toUpperCase() + this.firstName.substring(1) + " " + this.lastName[0].toUpperCase() + this.lastName.substring(1);
+    return "Hello, My name is " + fullName + " and I am " + this.ageInYears + " years old";
+}
+personThree.intro();
