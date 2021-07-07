@@ -52,7 +52,7 @@ var personTwo = {
     heightInInches: 73
 }
 personTwo.getNicelyFormattedFullName = function () {
-    return this.firstName.toUpperCase() + " " + this.lastName.toUpperCase();
+    return this.firstName[0].toUpperCase() + this.firstName.substring(1) + " " + this.lastName[0].toUpperCase() + this.lastName.substring(1);
 }
 personTwo.getNicelyFormattedFullName();
 
