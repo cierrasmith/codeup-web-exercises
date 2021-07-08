@@ -69,3 +69,58 @@ personThree.intro = function () {
     return "Hello, My name is " + fullName + " and I am " + this.ageInYears + " years old";
 }
 personThree.intro();
+
+// July 8th 2021
+// Part 1
+// TODO: Create a function that takes an array of strings and returns an array of objects
+//  where each object has 2 properties: originalString and countOfLetters
+// Example: input: ["hello", "dave"]
+//          returns: [
+//                    { "originalString":"hello", lengthOfOriginalString:5 },
+//                    { "originalString":"dave", lengthOfOriginalString:4 }
+//                   ]
+
+function arrayOfStringsToObjects(arrayStrings) {
+
+    var arrayObjects = [];
+
+    for (let i = 0; i < arrayStrings.length; i++) {
+        console.log(arrayStrings[i])
+        arrayObjects.push({originalString:arrayStrings[i], lengthOfOriginalString:arrayStrings[i].length})
+    }
+    return arrayObjects;
+}
+
+var arrayOfObjects = arrayOfStringsToObjects(["hello", "dave"]);
+//console.log(arrayOfStringsToObjects(["hello", "dave"]));
+
+// Part 2
+// TODO: Create a function that takes the array of objects from PART 1
+//  and returns a string of all of the originalStrings concatenated with spaces in between
+// Example: input: [
+//                    { "originalString":"hello", lengthOfOriginalString:5 },
+//                    { "originalString":"dave", lengthOfOriginalString:4 }
+//                  ]
+//          returns: "hello dave"
+
+function arrayOfObjectsToStrings(arrayObjectsParam) {
+
+    var results = []
+
+    arrayObjectsParam.forEach(function(singleObject) {
+
+        results.push(singleObject.originalString)
+
+    })
+
+    console.log(results.join(" "));
+}
+
+arrayOfObjectsToStrings(arrayOfObjects);
+
+// TODO: Create a function named getTallUsers that accepts an array of objects. The objects in the array will be in the same format
+//  as PersonOne, PersonTwo, and PersonThree. The functions job is to return an array of users that have heightInInches equal to or greater than 65.
+var people = [personOne,personTwo,personThree];
+// Example: getTallUsers(people)
+// ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
+//
