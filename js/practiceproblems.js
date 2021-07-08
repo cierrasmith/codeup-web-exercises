@@ -56,3 +56,20 @@ function shortenFullName(firstName, lastName) {
 }
 
 console.log(shortenFullName("squilliam", "fancyson"));
+
+
+//8 Jul evening practice
+
+var stuff = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"];
+
+function printWordIfStartsWithT(word) {
+    if(word.charAt(0) === 't') {
+        console.log("element at index " + i + " is " + word);
+    }
+}
+for (let i = 0; i < stuff.length; i++) {
+
+    var currentWord = stuff[i];
+    printWordIfStartsWithT(currentWord);
+
+}
