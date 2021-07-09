@@ -5,15 +5,16 @@
     <title>JQuery Exercises</title>
 </head>
 <body>
-    <h1 id="pageTitle">Favorite Movies and Shows</h1>
-
+<header>
+    <h1 id="codeup">Favorite Movies and Shows</h1>
+</header>
 <main>
-    <div class="intro">
+    <div class="codeup">
         <p>This is my page about my favorite movies and shows.</p>
         <p>I'll keep it limited to my top 3 each.</p>
     </div>
 
-    <div class="moviesAndShows">
+    <div class="codeup">
         <p>Favorite Movies:</p>
         <ul id="movies">
             <li>Scott Pilgrim vs The World</li>
@@ -28,12 +29,18 @@
         </ul>
     </div>
 
+    <div class="userMoviesAndShows">
+        <p>What are your favorite movies and shows?</p>
+        <p>Do you like any that I mentioned as well?</p>
+    </div>
 </main>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
-        var contents = $('.moviesAndShows').html();
+        var contents = $('#pageTitle').html();
         alert(contents);
+
+        $('.codeup').css("border", "solid 1px red");
 </script>
 </body>
 </html>
