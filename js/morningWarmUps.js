@@ -124,3 +124,23 @@ var people = [personOne,personTwo,personThree];
 // Example: getTallUsers(people)
 // ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
 //
+
+function getTallUsers(arrayOfObjects) {
+    var tallUsers = [];
+
+    for (let i = 0; i < arrayOfObjects.length; i++) {
+
+        //console.log(arrayOfObjects[i]);
+
+        var currentUser = arrayOfObjects[i];
+
+        var currentUsersHeight = currentUser.heightInInches;
+
+        if (currentUsersHeight >= 65) {
+            tallUsers.push(currentUser);
+        }
+    }
+    return tallUsers;
+}
+
+console.log(getTallUsers(people));
