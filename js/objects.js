@@ -131,7 +131,7 @@
         }
 
     ];
-    books.forEach(function(book) {
+    books.forEach(function (book) {
         console.log(book.title);
         console.log(book.author.firstName);
         console.log(book.author.lastName);
@@ -180,21 +180,21 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, author) {
-        let name = author.split(" ")
-        let firstName = name[0];
-        let lastName = name[1];
-        return {
-            title : title,
-            author : {
-                firstName: firstName,
-                lastName: lastName
-            }
-        }
-    }
-
-    console.log(createBook("book", "author"));
-
+//     function createBook(title, author) {
+//         let name = author.split(" ")
+//         let firstName = name[0];
+//         let lastName = name[1];
+//         return {
+//             title : title,
+//             author : {
+//                 firstName: firstName,
+//                 lastName: lastName
+//             }
+//         }
+//     }
+//
+//     console.log(createBook("book", "author"));
+//
 })();
 
 
