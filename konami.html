@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Konami Code</title>
 </head>
 <body>
 <h1>Konami Code</h1>
 
-<script src="/js/jquery.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
 <script>
   "use strict";
 
-  $(document).keyup(function(event){
-    console.log(event.keyCode);
+  var pressedKeys = "";
+
+$(document).ready(function () {
+
+  function keyEventHandler (event) {
+    console.log(event);
+  }
+
+  $(document).keydown(keyEventHandler)
+
+  var konamiKeys = {
+    37: 'left',
+    38: 'up',
+    39: 'right',
+    40: 'down',
+    65: 'a',
+    66: 'b',
+    13: 'enter'
+  };
+
+  var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter']
+
+  var startingKonami = 0;
+
+
+
   });
 </script>
 </body>
