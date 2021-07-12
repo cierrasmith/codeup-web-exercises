@@ -6,7 +6,8 @@
 </head>
 <body>
 <header>
-    <h1 id="codeup">Favorite Movies and Shows</h1>
+    <h1 id="pageTitle">My name is Cierra.</h1>
+    <h2 id="myFavorites">These are a few of my favorite movies and tv shows.</h2>
 </header>
 <main>
     <div class="codeup">
@@ -37,10 +38,24 @@
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
-        var contents = $('#pageTitle').html();
+        var contents = $('#myFavorites').html();
         alert(contents);
 
+
+        var allH1 = $('h1');
+        var allP = $('p');
+        var allLi = $('li');
+
         $('.codeup').css("border", "solid 1px red");
+        allLi.css("font-size", "20px");
+        allP.css("color", "#710193");
+        allH1.css("background-color", "lavender");
+
+
+        var h1Contents = $(allH1).html();
+        alert(h1Contents);
+
+        $('h1, p, li').css();
 </script>
 </body>
 </html>
