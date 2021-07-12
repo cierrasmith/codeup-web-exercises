@@ -38,24 +38,45 @@
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
-        var contents = $('#myFavorites').html();
-        alert(contents);
+        // var contents = $('#myFavorites').html();
+        // alert(contents);
+        //
+        //
+        // var allH1 = $('h1');
+        // var allP = $('p');
+        // var allLi = $('li');
+        //
+        // $('.codeup').css("border", "solid 1px red");
+        // allLi.css("font-size", "20px");
+        // allP.css("color", "#710193");
+        // allH1.css("background-color", "lavender");
+        //
+        //
+        // var h1Contents = $(allH1).html();
+        // alert(h1Contents);
+        //
+        // $('h1, p, li').css();
 
+        $('h1').click(
+            function() {
+            $(this).css('background-color', 'violet');
+        }
+        );
 
-        var allH1 = $('h1');
-        var allP = $('p');
-        var allLi = $('li');
+        $('p').dblclick(
+            function() {
+                $(this).css('font-size', '18px');
+            }
+        );
 
-        $('.codeup').css("border", "solid 1px red");
-        allLi.css("font-size", "20px");
-        allP.css("color", "#710193");
-        allH1.css("background-color", "lavender");
-
-
-        var h1Contents = $(allH1).html();
-        alert(h1Contents);
-
-        $('h1, p, li').css();
+        $('li').hover(
+            function() {
+                $(this).css('color', 'red');
+            },
+            function() {
+                $(this).css('color', 'black');
+            }
+        );
 </script>
 </body>
 </html>
