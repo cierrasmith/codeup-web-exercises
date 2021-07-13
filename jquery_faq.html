@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>National Park FAQs</title>
+  <style>
+    .invisible {
+      visibility: hidden;
+    }
+    .highlighted {
+      background-color: lawngreen;
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -40,14 +48,27 @@
     <dt>Can service dogs go to national parks?</dt>
     <dd>Yes.</dd>
   </dl>
+
+  <button class="toggler">Toggle DD's visibility</button>
 </main>
-
-
-
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
+  "use strict";
 
+  $(document).ready(function() {
+    //$('dd').addClass('invisible')
+    $('.toggler').click(function(event) {
+      event.preventDefault();
+      $('dd').toggleClass('invisible')
+    });
+    //highlight dt when a certain dt is clicked
+    $('dt').click(function(event) {
+      event.preventDefault();
+      $(this).toggleClass('highlighted');
+    });
+
+  });
 </script>
 </body>
 </html>
