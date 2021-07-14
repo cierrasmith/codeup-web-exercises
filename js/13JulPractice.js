@@ -1,5 +1,6 @@
 var randomTextButton = document.getElementById("randomTextButton");
 //TODO: Set variable for range input
+var randomTextRange = document.getElementById("randomTextRange")
 var randomTextContainer = document.getElementById("randomTextContainer");
 
 
