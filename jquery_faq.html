@@ -10,9 +10,6 @@
     .highlighted {
       background-color: lawngreen;
     }
-    .yellowbg {
-      background-color: yellow;
-    }
 
     .boldfont {
       font-weight: bold;
@@ -99,12 +96,12 @@
     //makes the last li in each ul have a yellow background
     $('#yellowButton').click(function () {
       $('ul').each(function () {
-        $(this).children().last().toggleClass('yellowbg');
+        $(this).children().last().css("background-color", "yellow");
       });
     });
     //when h3 is clicked, li's underneath should be bolded
     $('h3').click(function () {
-      $(this).children().addClass('boldfont');
+      $(this).next().css("font-weight", "bold");
     })
 
 
