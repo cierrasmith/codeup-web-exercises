@@ -10,6 +10,13 @@
     .highlighted {
       background-color: lawngreen;
     }
+    .yellowbg {
+      background-color: yellow;
+    }
+
+    .boldfont {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -49,28 +56,29 @@
     <dd>Yes.</dd>
   </dl>
 
-  <button class="toggler">Toggle DD's visibility</button>
+  <button id="visibilityToggle">Toggle DD's visibility</button>
 
   <h3>Yellowstone National Park</h3>
-  <ul>
+  <ul id="yellowstone">
     <li>Yellowstone is one of the top 5 national parks for the amount of visitors.</li>
     <li>Yellowstone Lake is the largest high elevation lake in North America.</li>
     <li>Has approximately 290 waterfalls throughout.</li>
   </ul>
 
   <h3>Grand Canyon National Park</h3>
-  <ul>
+  <ul id="grandcanyon">
     <li>The Grand Canyon is bigger than Rhode Island.</li>
     <li>There is a town inside of the canyon.</li>
     <li>It is full of ancient marine animal fossils.</li>
   </ul>
 
   <h3>Yosemite National Park</h3>
-  <ul>
+  <ul id="yosemite">
     <li>Yosemite supports over 400 species.</li>
     <li>The only national park that has hosted the winter Olympics.</li>
     <li>One of the few places that you can see a rainbow at night (also known as lunar rainbows).</li>
   </ul>
+  <button id="yellowButton">Yellow background for last li of ul</button>
 </main>
 
 <script src="js/jquery-2.2.4.js"></script>
@@ -79,15 +87,26 @@
 
   $(document).ready(function() {
     //$('dd').addClass('invisible')
-    $('.toggler').click(function(event) {
+    $('#visibilityToggle').click(function (event) {
       event.preventDefault();
       $('dd').toggleClass('invisible')
     });
     //highlight dt when a certain dt is clicked
-    $('dt').click(function(event) {
+    $('dt').click(function (event) {
       event.preventDefault();
       $(this).toggleClass('highlighted');
     });
+    //makes the last li in each ul have a yellow background
+    $('#yellowButton').click(function () {
+      $('ul').each(function () {
+        $(this).children().last().toggleClass('yellowbg');
+      });
+    });
+    //when h3 is clicked, li's underneath should be bolded
+    $('h3').click(function () {
+      $(this).children().addClass('boldfont');
+    })
+
 
   });
 </script>
