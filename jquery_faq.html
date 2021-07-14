@@ -104,8 +104,8 @@
       $(this).next().css("font-weight", "bold");
     })
     //when any list item is clicked, the first li of the parent ul should have blue font
-    $('li').click(function(index) {
-        $(this).parent('li').first().css("color", "blue");
+    $('li').click(function() {
+        $(this).parent().children().first().css("color", "blue");
     })
 
 
