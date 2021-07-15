@@ -24,43 +24,48 @@
         center: [141.3690, 40.6832]
     });
 
-    var thunderRamen = {
-        address: "Thunder Ramen, 1 Chome-３-1 Horiguchi, Misawa, Aomori 033-0123, Japan",
-        popupHTML: "<img src='https://images.squarespace-cdn.com/content/v1/5953bffb579fb37178d24aca/1578381281976-VPREABDA5U949AJXVMCB/IMG_5084.jpg?format=1000w' width='90px' height='auto'><p>Thunder Ramen</p>"
-    };
+    var restaurants = [
+        {name: 'Thunder Ramen', address: "Thunder Ramen, 1 Chome-３-1 Horiguchi, Misawa, Aomori 033-0123, Japan", info: "The best ramen I've ever eaten."},
+        {name: 'Aburi-An', address: "ABURI-AN AKI, 4 Chome-11-17 Chuocho, Misawa, Aomori 033-0001, Japan", info: "Yakiniku, which is raw meat that you grill at your table."},
+        {name: 'CoCo Ichibanya', address: "CoCo Ichibanya, Minamiyama-７１-13 Misawa, Aomori 033-0022, Japan", info: "CoCo Ichibanya is a Japanese curry chain."}
+    ]
 
-    function markerAndPopup(ramen, token, map) {
-        geocode(ramen.address, token).then(function (coordinates) {
+    restaurants.forEach(function (restaurant) {
+        geocode(restaurant.address, accessToken).then(function (coordinates) {
             var popup = new mapboxgl.Popup()
-                .setHTML(thunderRamen.popupHTML);
+                .setHTML(restaurant.name + ": " + restaurant.info);
             var marker = new mapboxgl.Marker()
                 .setLngLat(coordinates)
                 .addTo(map)
                 .setPopup(popup);
-                map.setCenter(coordinates);
-                map.setZoom(17);
-            popup.addTo(map);
+
         });
-    }
+    });
 
-    markerAndPopup(thunderRamen, accessToken, map);
-        // console.log(result);
-        // map.setCenter(result);
-        // map.setZoom(17);
 
-    // var marker = new mapboxgl.Marker()
-    //     .setLngLat([141.3779, 40.6853])
-    //     .addTo(map);
-    //     map.setZoom(15);
+    // function markerAndPopup(ramen, token, map) {
+    //     //geocode(ramen.address, token).then(function (coordinates) {
+    //         var popup = new mapboxgl.Popup()
+    //             .setHTML(thunderRamen.popupHTML);
+    //         var marker = new mapboxgl.Marker()
+    //             .setLngLat(coordinates)
+    //             .addTo(map)
+    //             .setPopup(popup);
+    //             map.setCenter(coordinates);
+    //             map.setZoom(17);
+    //         popup.addTo(map);
+    //     });
+    // }
     //
+    // markerAndPopup(thunderRamen, accessToken, map);
+
+
+
     // map.on('click', function() {
-    //
-    //     var popup = new mapboxgl.Popup()
-    //         .setHTML("<img src='https://images.squarespace-cdn.com/content/v1/5953bffb579fb37178d24aca/1578381281976-VPREABDA5U949AJXVMCB/IMG_5084.jpg?format=1000w' width='90px' height='auto'><p>Thunder Ramen</p>")
-    //         .addTo(map)
-    //
-    //     marker.setPopup(popup);
-
+    // var thunderRamen = {
+    //     address: "Thunder Ramen, 1 Chome-３-1 Horiguchi, Misawa, Aomori 033-0123, Japan",
+    //     popupHTML: "<img src='https://images.squarespace-cdn.com/content/v1/5953bffb579fb37178d24aca/1578381281976-VPREABDA5U949AJXVMCB/IMG_5084.jpg?format=1000w' width='90px' height='auto'><p>Thunder Ramen</p>"
+    // };
 
 
 
