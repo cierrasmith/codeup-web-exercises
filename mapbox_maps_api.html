@@ -12,7 +12,11 @@
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
-    mapboxgl.accessToken = mapboxAPIKey
+
+    var accessToken = mapboxAPIKey
+
+    mapboxgl.accessToken = accessToken
+
     var map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -20,21 +24,45 @@
         center: [141.3690, 40.6832]
     });
 
-    var marker = new mapboxgl.Marker()
-        .setLngLat([141.3779, 40.6853])
-        .addTo(map);
-        map.setZoom(15);
+    var thunderRamen = {
+        address: "Thunder Ramen, 1 Chome-３-1 Horiguchi, Misawa, Aomori 033-0123, Japan",
+        popupHTML: "<img src='https://images.squarespace-cdn.com/content/v1/5953bffb579fb37178d24aca/1578381281976-VPREABDA5U949AJXVMCB/IMG_5084.jpg?format=1000w' width='90px' height='auto'><p>Thunder Ramen</p>"
+    };
 
-    map.on('click', function() {
+    function markerAndPopup(ramen, token, map) {
+        geocode(ramen.address, token).then(function (coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(thunderRamen.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+                map.setCenter(coordinates);
+                map.setZoom(17);
+            popup.addTo(map);
+        });
+    }
 
-        var popup = new mapboxgl.Popup()
-            .setLngLat([141.3779, 40.6853])
-            .setHTML("<p><strong>Thunder Ramen</strong></p>")
-            .addTo(map)
+    markerAndPopup(thunderRamen, accessToken, map);
+        // console.log(result);
+        // map.setCenter(result);
+        // map.setZoom(17);
 
-        marker.setPopup(popup);
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([141.3779, 40.6853])
+    //     .addTo(map);
+    //     map.setZoom(15);
+    //
+    // map.on('click', function() {
+    //
+    //     var popup = new mapboxgl.Popup()
+    //         .setHTML("<img src='https://images.squarespace-cdn.com/content/v1/5953bffb579fb37178d24aca/1578381281976-VPREABDA5U949AJXVMCB/IMG_5084.jpg?format=1000w' width='90px' height='auto'><p>Thunder Ramen</p>")
+    //         .addTo(map)
+    //
+    //     marker.setPopup(popup);
 
-    });
+
+
 
 
 
