@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Lecture</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+
+<div id='map' style='width: 98vw; height: 98vh;'></div>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+  mapboxgl.accessToken = mapboxAPIKey
+  var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    zoom: 10,
+    center: [-90.1994, 38.6270]
+  });
+
+  var marker = new mapboxgl.Marker()
+      .setLngLat([-90.1994, 38.6270])
+      .addTo(map);
+
+  var popup = new mapboxgl.Popup()
+      .setLngLat([-90.1848, 38.6247])
+      .setHTML("<img src='https://www.riverbender.com/articles/images/O_111320104823-GatewayArch.jpg' width='80px' height='auto'><p>St. Louis Arch</p>")
+      .addTo(map)
+
+  marker.setPopup(popup);
+
+  var locationToSearchFor = "750 Casino Center Dr, Maryland Heights, MO 63043";
+
+  //returns the coordinates
+  geocode(locationToSearchFor, mapboxAPIKey).then(function(data) {
+      console.log(`Here are the coordinates for the following location ${locationToSearchFor}`)
+      console.log(data);
+
+      var bluesMarker = new mapboxgl.Marker()
+          .setLngLat([-90.477086, 38.749571])
+          .addTo(map);
+
+      var bluesPopup = new mapboxgl.Popup()
+          .setLngLat([-90.477086, 38.749571])
+          .setHTML("<img src='https://images.wsj.net/im-81694?width=1280&size=1' width='100px' height='auto'><p>Blues Training Facility</p>")
+          .addTo(map)
+
+      bluesMarker.setPopup(bluesPopup);
+
+  });
+
+
+
+</script>
+</body>
+</html>
