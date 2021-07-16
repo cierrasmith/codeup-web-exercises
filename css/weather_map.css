@@ -1,5 +1,7 @@
+.navbar {
+    background-color: blue;
+}
 
-/* Float four columns side by side */
 .column {
     float: left;
     width: 20%;
@@ -10,8 +12,6 @@
 .row {
     margin: 2px;
 }
-
-
 
 /* Style the counter cards */
 .card {
