@@ -1,0 +1,19 @@
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+    margin: 2px;
+}
+
+
+
+/* Style the counter cards */
+.card {
+    text-align: center;
+}
