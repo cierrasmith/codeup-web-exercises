@@ -25,7 +25,7 @@
     });
 
     var restaurants = [
-        {name: 'Thunder Ramen', address: "Thunder Ramen, 1 Chome-３-1 Horiguchi, Misawa, Aomori 033-0123, Japan", info: "The best ramen I've ever eaten."},
+        {name: "Thunder Ramen", address: "Thunder Ramen, 1 Chome-３-1 Horiguchi, Misawa, Aomori 033-0123, Japan", info: "The best ramen I've ever eaten."},
         {name: 'Aburi-An', address: "ABURI-AN AKI, 4 Chome-11-17 Chuocho, Misawa, Aomori 033-0001, Japan", info: "Yakiniku, which is raw meat that you grill at your table."},
         {name: 'CoCo Ichibanya', address: "CoCo Ichibanya, Minamiyama-７１-13 Misawa, Aomori 033-0022, Japan", info: "CoCo Ichibanya is a Japanese curry chain."}
     ]
@@ -41,6 +41,18 @@
 
         });
     });
+
+    // for (let i = 0; i < restaurants.length; i++) {
+    //     geocode(restaurants[i].address, accessToken).then(function (coordinates) {
+    //         var popup = new mapboxgl.Popup()
+    //             .setHTML(restaurants[i].name + ": " + restaurants[i].info);
+    //         var marker = new mapboxgl.Marker()
+    //             .setLngLat(coordinates)
+    //             .addTo(map)
+    //             .setPopup(popup);
+    //
+    //     });
+    // }
 
 
     // function markerAndPopup(ramen, token, map) {
