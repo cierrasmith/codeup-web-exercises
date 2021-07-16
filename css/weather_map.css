@@ -1,5 +1,10 @@
-.navbar {
-    background-color: blue;
+.location > #find {
+    background-color: #7395AE;
+    color: white;
+}
+
+.location {
+    padding-left: 60px;
 }
 
 .column {
@@ -14,6 +19,14 @@
 }
 
 /* Style the counter cards */
-.card {
+.card-header {
+    background-color: #B1A296;
+    color: white;
     text-align: center;
+    padding-bottom: 0;
+}
+
+#map {
+    width: 100vw;
+    height: 50vh;
 }

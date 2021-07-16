@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-light" style="background-color: #320053; color:white">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #557A95; color:white">
         <h2 id="weatherApp">Weather App</h2>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             </div>
@@ -20,12 +20,11 @@
     </nav>
 </header>
 <br>
-<br>
 <nav>
-    <label>
+    <label class="location">
         Location
         <input id="searchBar" type="text">
-        <input id="location" type="Submit" value="Find"/>
+        <input id="find" type="Submit" value="Find"/>
     </label>
 </nav>
 
@@ -38,7 +37,7 @@
                     <p class="days">Day 1</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp & Icon</li>
+                    <li class="list-group-item" style="text-align: center">Temp & Icon</li>
                     <li class="list-group-item">Description:</li>
                     <li class="list-group-item">Humidity:</li>
                     <li class="list-group-item">Wind:</li>
@@ -53,7 +52,7 @@
                     <p class="days">Day 2</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp & Icon</li>
+                    <li class="list-group-item" style="text-align: center">Temp & Icon</li>
                     <li class="list-group-item">Description:</li>
                     <li class="list-group-item">Humidity:</li>
                     <li class="list-group-item">Wind:</li>
@@ -68,7 +67,7 @@
                     <p class="days">Day 3</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp & Icon</li>
+                    <li class="list-group-item" style="text-align: center">Temp & Icon</li>
                     <li class="list-group-item">Description:</li>
                     <li class="list-group-item">Humidity:</li>
                     <li class="list-group-item">Wind:</li>
@@ -83,7 +82,7 @@
                     <p class="days">Day 4</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp & Icon</li>
+                    <li class="list-group-item" style="text-align: center">Temp & Icon</li>
                     <li class="list-group-item">Description:</li>
                     <li class="list-group-item">Humidity:</li>
                     <li class="list-group-item">Wind:</li>
@@ -97,7 +96,7 @@
                     <p class="days">Day 5</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp & Icon</li>
+                    <li class="list-group-item" style="text-align: center">Temp & Icon</li>
                     <li class="list-group-item">Description:</li>
                     <li class="list-group-item">Humidity:</li>
                     <li class="list-group-item">Wind:</li>
@@ -106,70 +105,9 @@
             </div>
         </div>
     </div>
-<!--<div class="card-deck">-->
-<!--    <div class="card" style="width: 15rem">-->
-<!--        <div class="card-header">-->
-<!--            <p class="days">Day 1</p>-->
-<!--        </div>-->
-<!--        <ul class="list-group list-group-flush">-->
-<!--            <li class="list-group-item">Temp & Icon</li>-->
-<!--            <li class="list-group-item">Description:</li>-->
-<!--            <li class="list-group-item">Humidity:</li>-->
-<!--            <li class="list-group-item">Wind:</li>-->
-<!--            <li class="list-group-item">Pressure:</li>-->
-<!--        </ul>-->
-<!--    <div class="card" style="width: 15rem">-->
-<!--        <div class="card-header">-->
-<!--            <p class="days">Day 2</p>-->
-<!--        </div>-->
-<!--        <ul class="list-group list-group-flush">-->
-<!--            <li class="list-group-item">Temp & Icon</li>-->
-<!--            <li class="list-group-item">Description:</li>-->
-<!--            <li class="list-group-item">Humidity:</li>-->
-<!--            <li class="list-group-item">Wind:</li>-->
-<!--            <li class="list-group-item">Pressure:</li>-->
-<!--        </ul>-->
-<!--    <div class="card" style="width: 15rem">-->
-<!--        <div class="card-header">-->
-<!--            <p class="days">Day 3</p>-->
-<!--        </div>-->
-<!--        <ul class="list-group list-group-flush">-->
-<!--            <li class="list-group-item">Temp & Icon</li>-->
-<!--            <li class="list-group-item">Description:</li>-->
-<!--            <li class="list-group-item">Humidity:</li>-->
-<!--            <li class="list-group-item">Wind:</li>-->
-<!--            <li class="list-group-item">Pressure:</li>-->
-<!--        </ul>-->
-<!--    <div class="card" style="width: 15rem">-->
-<!--        <div class="card-header">-->
-<!--            <p class="days">Day 4</p>-->
-<!--        </div>-->
-<!--        <ul class="list-group list-group-flush">-->
-<!--            <li class="list-group-item">Temp & Icon</li>-->
-<!--            <li class="list-group-item">Description:</li>-->
-<!--            <li class="list-group-item">Humidity:</li>-->
-<!--            <li class="list-group-item">Wind:</li>-->
-<!--            <li class="list-group-item">Pressure:</li>-->
-<!--        </ul>-->
-<!--    <div class="card" style="width: 15rem">-->
-<!--        <div class="card-header">-->
-<!--            <p class="days">Day 5</p>-->
-<!--        </div>-->
-<!--        <ul class="list-group list-group-flush">-->
-<!--            <li class="list-group-item">Temp & Icon</li>-->
-<!--            <li class="list-group-item">Description:</li>-->
-<!--            <li class="list-group-item">Humidity:</li>-->
-<!--            <li class="list-group-item">Wind:</li>-->
-<!--            <li class="list-group-item">Pressure:</li>-->
-<!--        </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--</div>-->
 
-<div id='map' style='width: 100vw; height: 50vh;'></div>
+
+<div id="map"></div>
 </main>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/keys.js"></script>
