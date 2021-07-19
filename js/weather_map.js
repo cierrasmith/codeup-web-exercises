@@ -25,10 +25,10 @@ $(document).ready(function () {
                     <div class="column" id="weather-card-col">
                         <div class="card" style="width: 18rem;">
                             <div class="card-header">
-                                ${new Date(day.dt * 1000).toDateString()}
+                                ${new Date(day.dt * 1000).toLocaleDateString()}
                             </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item" style="text-align: center">${day.temp.morn} / ${day.temp.night}</li>
+                            <li class="list-group-item" id="temp">${day.temp.morn} / ${day.temp.night}</li>
                             <li class="list-group-item">Description: ${day.weather[0].description}</li>
                             <li class="list-group-item">Humidity: ${day.humidity}</li>
                             <li class="list-group-item">Wind: ${day.wind_speed}</li>

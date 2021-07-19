@@ -32,6 +32,14 @@
     padding-bottom: 0;
 }
 
+#map {
+    width: 100vw;
+    height: 50vh;
+}
+
+#temp {
+    text-align: center;
+}
 
 
 
