@@ -14,15 +14,15 @@
 }
 
 .column {
+    display: flex;
     float: left;
     width: 20%;
     padding: 10px;
 }
-
-/* Remove extra left and right margins, due to padding */
+/*Remove extra left and right margins, due to padding*/
 .row {
-    margin: 2px;
-}
+      margin: 2px;
+  }
 
 /* Style the counter cards */
 .card-header {
@@ -31,5 +31,8 @@
     text-align: center;
     padding-bottom: 0;
 }
+
+
+
 
 
