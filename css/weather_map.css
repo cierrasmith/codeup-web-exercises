@@ -4,12 +4,12 @@
     padding: 5px;
 }
 
-.location > #find {
+#search-button {
     background-color: #7395AE;
     color: white;
 }
 
-.location {
+.searchLocation {
     padding-left: 60px;
 }
 

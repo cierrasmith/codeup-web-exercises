@@ -11,8 +11,9 @@
     <title>Weather Map</title>
 </head>
 <body>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
 <header>
-
     <nav class="navbar navbar-light">
         <h2 id="weatherApp">Weather App</h2>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -20,19 +21,19 @@
         <h5 id="currentCity">Current City: San Antonio</h5>
     </nav>
 </header>
-<br>
-<nav>
-    <label class="location">
-        Location
-        <input id="searchBar" type="text">
-        <input id="find" type="Submit" value="Find"/>
-    </label>
-</nav>
 
 <br>
 <main>
+    <form class="searchLocation">
+        Location
+        <input id="search-input" type="search">
+        <button id="search-button" type="submit">Find</button>
+    </form>
+    <br>
     <div id="weather-card-col"></div>
     <div id="map"></div>
+
+    <div id="geocoder" class="geocoder"></div>
 </main>
 
 

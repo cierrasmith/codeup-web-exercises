@@ -25,6 +25,13 @@ $(document).ready(function () {
     var lat = 29.4252;
     var lon = -98.4916;
 
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+    });
+
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
     function newWeather(coord1, coord2) {
         $.get(`https://api.openweathermap.org/data/2.5/onecall`, {
             appid: openWeatherAPIKey,
@@ -58,6 +65,14 @@ $(document).ready(function () {
         })
     }
     newWeather(lat, lon);
+
+    // var searchButton = document.getElementById("search-button");
+    // var searchInput = document.getElementById("search-input");
+    //
+    // searchButton.addEventListener('click', () => {
+    //     const inputValue = searchInput.value;
+    //     alert(inputValue);
+    // })
 });
 
 // var day1 = data.daily[0];
