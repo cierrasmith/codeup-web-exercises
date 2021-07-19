@@ -9,19 +9,36 @@ $(document).ready(function () {
         center: [-98.4936, 29.4241]
     });
 
-    $.get(`https://api.openweathermap.org/data/2.5/onecall`, {
-        appid: openWeatherAPIKey,
-        lat: 29.4252,
-        lon: -98.4916,
-        units: "imperial"
-    }).done(function (data) {
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.4936, 29.4241])
+        .addTo(map);
 
-        $("#weather-card-col").html("");
-        data.daily.forEach(function (day, index) {
-            if (index < 5) {
-                console.log(day);
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        console.log(lngLat);
+        newWeather(lngLat.lat, lngLat.lng);
+    }
 
-                var weatherCard = `
+    marker.on('dragend', onDragEnd);
+    var lat = 29.4252;
+    var lon = -98.4916;
+
+    function newWeather(coord1, coord2) {
+        $.get(`https://api.openweathermap.org/data/2.5/onecall`, {
+            appid: openWeatherAPIKey,
+            lat: coord1,
+            lon: coord2,
+            units: "imperial"
+        }).done(function (data) {
+
+            $("#weather-card-col").html("");
+            data.daily.forEach(function (day, index) {
+                if (index < 5) {
+                    console.log(day);
+
+                    var weatherCard = `
                     <div class="column" id="weather-card-col">
                         <div class="card" style="width: 18rem;">
                             <div class="card-header">
@@ -35,11 +52,14 @@ $(document).ready(function () {
                             <li class="list-group-item">Pressure: ${day.pressure}</li>
                         </ul>
                     </div>`
-                $("#weather-card-col").append(weatherCard);
-            }
+                    $("#weather-card-col").append(weatherCard);
+                }
+            })
         })
-    })
+    }
+    newWeather(lat, lon);
 });
+
 // var day1 = data.daily[0];
 // console.log(day1);
 // $("#day1-temp").text(day1.temp.day);
