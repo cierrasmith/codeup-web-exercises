@@ -1,3 +1,9 @@
+.navbar {
+    background-color: #557A95;
+    color: white;
+    padding: 5px;
+}
+
 .location > #find {
     background-color: #7395AE;
     color: white;
@@ -26,7 +32,4 @@
     padding-bottom: 0;
 }
 
-#map {
-    width: 100vw;
-    height: 50vh;
-}
+
