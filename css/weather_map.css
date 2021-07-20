@@ -8,12 +8,14 @@ body {
     color: white;
     padding: 5px;
     text-shadow: 2px 3px 3px black;
+    border-bottom: 5px solid #B1A296;
 }
 
 #search-button {
     background-color: #7395AE;
     color: white;
     border-radius: 5px;
+    text-shadow: 1px 1px 1px black;
 }
 
 .searchLocation {
