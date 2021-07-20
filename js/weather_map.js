@@ -42,7 +42,7 @@ $(document).ready(function () {
                                 ${new Date(day.dt * 1000).toLocaleDateString()}
                             </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item" id="temp">${day.temp.morn} / ${day.temp.night}</li>
+                            <li class="list-group-item" id="temp">${day.temp.morn} F&#176; / ${day.temp.night} F&#176;</li>
                             <li class="list-group-item">Description: ${day.weather[0].description}</li>
                             <li class="list-group-item">Humidity: ${day.humidity}</li>
                             <li class="list-group-item">Wind: ${day.wind_speed}</li>
@@ -54,7 +54,6 @@ $(document).ready(function () {
             })
         })
     }
-    // newWeather(lat, lon);
 
     function onDragEnd() {
         var lngLat = marker.getLngLat();
@@ -88,15 +87,10 @@ $(document).ready(function () {
             })
         });
         newWeather();
+
     });
 
-    // var searchButton = document.getElementById("search-button");
-    // var searchInput = document.getElementById("search-input");
-    //
-    // searchButton.addEventListener('click', () => {
-    //     const inputValue = searchInput.value;
-    //     alert(inputValue);
-    // })
+
 });
 
 

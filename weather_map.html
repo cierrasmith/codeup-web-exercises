@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="css/weather_map.css"> <!--Custom CSS-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script> <!--Mapbox-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet'/> <!--Mapbox-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
     <title>Weather Map</title>
 </head>
 <body>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+
 <header>
     <nav class="navbar navbar-light">
         <h2 id="weatherApp">Weather App</h2>
@@ -26,7 +28,7 @@
 <main>
     <form class="searchLocation">
         Location
-        <input id="search-input" type="search">
+        <input id="search-input" type="search" placeholder="Enter City">
         <button id="search-button" type="submit">Find</button>
     </form>
     <br>

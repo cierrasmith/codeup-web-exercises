@@ -1,3 +1,8 @@
+body {
+    background-color: #e5e5e5;
+    font-family: 'Lexend', sans-serif;
+}
+
 .navbar {
     background-color: #557A95;
     color: white;
@@ -7,6 +12,7 @@
 #search-button {
     background-color: #7395AE;
     color: white;
+    border-radius: 5px;
 }
 
 .searchLocation {
@@ -21,16 +27,20 @@
 }
 /*Remove extra left and right margins, due to padding*/
 .row {
-      margin: 2px;
+    margin: 2px;
   }
+
+#card {
+    border: 2px solid black;
+}
 
 /* Style the counter cards */
 .card-header {
     background-color: #B1A296;
     color: white;
     text-align: center;
-    padding-bottom: 0;
 }
+
 
 #map {
     width: 100vw;
