@@ -7,6 +7,7 @@ body {
     background-color: #557A95;
     color: white;
     padding: 5px;
+    text-shadow: 2px 3px 3px black;
 }
 
 #search-button {
@@ -30,15 +31,13 @@ body {
     margin: 2px;
   }
 
-#card {
-    border: 2px solid black;
-}
 
 /* Style the counter cards */
 .card-header {
     background-color: #B1A296;
     color: white;
     text-align: center;
+    text-shadow: 1px 1px 1px black;
 }
 
 
@@ -51,6 +50,9 @@ body {
     text-align: center;
 }
 
+#currentCity {
+    padding: 10px;
+}
 
 
 

@@ -22,6 +22,7 @@ $(document).ready(function () {
     newWeather();
 
 
+
     function newWeather() {
         $.get(`https://api.openweathermap.org/data/2.5/onecall`, {
             appid: openWeatherAPIKey,
@@ -42,7 +43,7 @@ $(document).ready(function () {
                                 ${new Date(day.dt * 1000).toLocaleDateString()}
                             </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item" id="temp">${day.temp.morn} F&#176; / ${day.temp.night} F&#176;</li>
+                            <li class="list-group-item" id="temp">${day.temp.morn} / ${day.temp.night}</li>
                             <li class="list-group-item">Description: ${day.weather[0].description}</li>
                             <li class="list-group-item">Humidity: ${day.humidity}</li>
                             <li class="list-group-item">Wind: ${day.wind_speed}</li>
@@ -54,13 +55,14 @@ $(document).ready(function () {
             })
         })
     }
+    // newWeather(lat, lon);
 
     function onDragEnd() {
         var lngLat = marker.getLngLat();
         console.log(lngLat);
         newWeather(lngLat.lat, lngLat.lng);
-        lon = longLat.lng;
-        lat = longLat.lat;
+        lon = lngLat.lng;
+        lat = lngLat.lat;
         newWeather();
     }
 
@@ -72,6 +74,7 @@ $(document).ready(function () {
         e.preventDefault();
         var address = $("#search-input").val();
         longLat = marker.getLngLat();
+        $("#currentCity").html("Current City: " + address);
         console.log(address);
 
         geocode(address, mapboxAPIKey).then(function (result) {
@@ -87,10 +90,15 @@ $(document).ready(function () {
             })
         });
         newWeather();
-
     });
 
-
+    // var searchButton = document.getElementById("search-button");
+    // var searchInput = document.getElementById("search-input");
+    //
+    // searchButton.addEventListener('click', () => {
+    //     const inputValue = searchInput.value;
+    //     alert(inputValue);
+    // })
 });
 
 
