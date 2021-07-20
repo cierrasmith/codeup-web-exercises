@@ -1,6 +1,9 @@
 "use strict"
 $(document).ready(function () {
 
+    var lat = 29.4252;
+    var lon = -98.4916;
+
     mapboxgl.accessToken = mapboxAPIKey
     var map = new mapboxgl.Map({
         container: 'map',
@@ -12,7 +15,7 @@ $(document).ready(function () {
     var marker = new mapboxgl.Marker({
         draggable: true
     })
-        .setLngLat([-98.4936, 29.4241])
+        .setLngLat([lon, lat])
         .addTo(map);
 
     function onDragEnd() {
@@ -22,8 +25,7 @@ $(document).ready(function () {
     }
 
     marker.on('dragend', onDragEnd);
-    var lat = 29.4252;
-    var lon = -98.4916;
+
 
 
 
