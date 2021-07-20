@@ -43,7 +43,7 @@ $(document).ready(function () {
                                 ${new Date(day.dt * 1000).toLocaleDateString()}
                             </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item" id="temp">${day.temp.morn} / ${day.temp.night}
+                            <li class="list-group-item" id="temp">${day.temp.morn} F&#176; / ${day.temp.night} F&#176;
                             <br>
                             <img src="https://openweathermap.org/img/w/${day.weather[0].icon}.png">
                             </li>
@@ -66,11 +66,11 @@ $(document).ready(function () {
         newWeather(lngLat.lat, lngLat.lng);
         lon = lngLat.lng;
         lat = lngLat.lat;
-        //$("#currentCity").html("Current City: " + lngLat); will need to work on reverse geocode
         newWeather();
     }
 
     marker.on('dragend', onDragEnd);
+
 
     var longLat;
 
@@ -95,6 +95,7 @@ $(document).ready(function () {
         });
         newWeather();
     });
+
 
 });
 
