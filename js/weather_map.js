@@ -9,31 +9,24 @@ $(document).ready(function () {
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         zoom: 10,
-        center: [-98.4936, 29.4241]
+        center: [lon, lat]
     });
 
     var marker = new mapboxgl.Marker({
         draggable: true
     })
+        marker
         .setLngLat([lon, lat])
         .addTo(map);
 
-    function onDragEnd() {
-        var lngLat = marker.getLngLat();
-        console.log(lngLat);
-        newWeather(lngLat.lat, lngLat.lng);
-    }
-
-    marker.on('dragend', onDragEnd);
+    newWeather();
 
 
-
-
-    function newWeather(coord1, coord2) {
+    function newWeather() {
         $.get(`https://api.openweathermap.org/data/2.5/onecall`, {
             appid: openWeatherAPIKey,
-            lat: coord1,
-            lon: coord2,
+            lat: lat,
+            lon: lon,
             units: "imperial"
         }).done(function (data) {
 
@@ -61,7 +54,41 @@ $(document).ready(function () {
             })
         })
     }
-    newWeather(lat, lon);
+    // newWeather(lat, lon);
+
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        console.log(lngLat);
+        newWeather(lngLat.lat, lngLat.lng);
+        lon = longLat.lng;
+        lat = longLat.lat;
+        newWeather();
+    }
+
+    marker.on('dragend', onDragEnd);
+
+    var longLat;
+
+    $("#search-button").click(function (e) {
+        e.preventDefault();
+        var address = $("#search-input").val();
+        longLat = marker.getLngLat();
+        console.log(address);
+
+        geocode(address, mapboxAPIKey).then(function (result) {
+            console.log(result);
+            lon = result[0];
+            lat = result[1];
+
+            marker
+                .setLngLat([lon, lat]);
+            map.flyTo({
+                center: [lon, lat],
+                essential: true
+            })
+        });
+        newWeather();
+    });
 
     // var searchButton = document.getElementById("search-button");
     // var searchInput = document.getElementById("search-input");
