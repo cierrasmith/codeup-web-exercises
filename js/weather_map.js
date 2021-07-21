@@ -43,7 +43,7 @@ $(document).ready(function () {
                                 ${new Date(day.dt * 1000).toLocaleDateString()}
                             </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item" id="temp">${day.temp.morn} F&#176; / ${day.temp.night} F&#176;
+                            <li class="list-group-item" id="temp">${day.temp.day} F&#176;/ ${day.temp.night} F&#176;
                             <br>
                             <img src="https://openweathermap.org/img/w/${day.weather[0].icon}.png">
                             </li>
