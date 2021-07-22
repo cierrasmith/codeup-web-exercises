@@ -74,5 +74,13 @@ let {usersName, userAge} = aUser
 console.log(usersName);
 console.log(userAge);
 
+//Object destructuring using an array
+const food = [`banana`, `apple`, `kiwi`, `orange`];
+
+const [food1, food2] = food;
+console.log(food1);
+console.log(food2);
+
+
 
 
