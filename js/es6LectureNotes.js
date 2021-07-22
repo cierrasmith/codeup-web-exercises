@@ -64,5 +64,15 @@ const personBuilder = (name, age) => {
     return {name, age}
 }
 
-console.log(personBuilder("Usagi", "15"));
+//console.log(personBuilder("Usagi", "15"));
+
+//Object destructuring
+const aUser = {usersName: "Usagi", userAge: 15}
+
+let {usersName, userAge} = aUser
+
+console.log(usersName);
+console.log(userAge);
+
+
 
