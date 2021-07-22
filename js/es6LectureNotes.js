@@ -27,14 +27,26 @@ for (let element of people) { //element represents one of the people in the arra
 }
 
 people.forEach(function (person, index) {
-    console.log(`${person}'s index is ---> ${index}`) //will grab the index of each person
+    console.log(`${person}'s index is --> ${index}`) //will grab the index of each person
 })
 
-// function sayHello(name) {
-//     return `Hello from ${name}!`;
+console.log(sayHello("Cierra"))
+
+function sayHello(name) {
+    return `Hello from ${name}!`;
+}
+
+// const sayHello = name => {  //arrow function
+//     const nameToDisplay = name.toUpperCase();
+//     return `Hello from ${nameToDisplay}!`
 // }
 
-const sayHello = name => {  //arrow function
-    const nameToDisplay = name.toUpperCase();
-    return `Hello from ${nameToDisplay}!`
+const sayHelloFromComputer = _ => {  //don't have to pass an argument, can use _ or ()
+    return `Hello, user.`;
 }
+console.log(sayHelloFromComputer());
+
+function sayHi(name = "Rei Hino"){
+    return `Hi from ${name}!`;
+}
+
