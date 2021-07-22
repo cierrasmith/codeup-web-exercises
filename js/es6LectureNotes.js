@@ -46,7 +46,23 @@ const sayHelloFromComputer = _ => {  //don't have to pass an argument, can use _
 }
 console.log(sayHelloFromComputer());
 
-function sayHi(name = "Rei Hino"){
+function sayHi(name = "Rei"){
     return `Hi from ${name}!`;
 }
+
+//Object Property Variable Assignment Shorthand
+let age = 17;
+
+let aPerson = {
+    name: "Michiru",
+    age
+}
+
+console.log(aPerson);
+
+const personBuilder = (name, age) => {
+    return {name, age}
+}
+
+console.log(personBuilder("Usagi", "15"));
 
