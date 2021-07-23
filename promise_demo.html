@@ -16,12 +16,50 @@
     fetch('https://api.github.com/users') // step 1: make fetch call to github...whenever the fetch is successful, the code in the "then" will run
         .then(function(response) {
             // console.log(response);
-            let aPromise = response.json(); //step 2: grab json data from response
+            let aPromise = response.json(); // step 2: grab json data from response
             console.log(aPromise);
             return aPromise;
-        }).then(function (jsonData) { //.then function also returns a promise
+        }).then(function (jsonData) { // .then function also returns a promise
             console.log(jsonData) // step 3: do something with that json data
+        }).catch(function (error) { // if it cannot fetch (ex: invalid url) the catch will run the error
+            console.log("ERROR!", error);
+            console.log("since this sequence of code failed, we can do other things to respond to this error")
     });
+
+    //4. move fetch json result into a function resulting in cleaner initial call
+    //my function will return a promise
+    function getUsersFromGithubAsJSON() {
+        // 1. make the fetch call to github
+        // 2. return the json() promise
+        return fetch('https://api.github.com/users')
+            .then(function (response) {
+                return response.json();
+            });
+    }
+
+    getUsersFromGithubAsJSON()
+        .then(function (userData) {
+            for (const user of userData) {
+                console.log(user);
+            }
+        });
+
+    //5. make a function that returns a new promise
+    function makeNewPromise() {
+        let myPromise = new Promise(function (resolve, reject) {
+            // return solve ("hey the promise created successfully!");
+            // reject("so sad, broken promise");
+        });
+        return myPromise;
+    }
+    makeNewPromise()
+        .then(function (msg) {
+            console.log(msg);
+        }).catch(function (error) {
+            console.log("ERROR!", error);
+    });
+
+
 
 </script>
 </body>
