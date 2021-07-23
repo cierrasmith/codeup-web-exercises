@@ -26,5 +26,6 @@ function wait(num) {
         } ,num);
     })
 }
+
 wait(1000).then((message) => console.log(`You'll see this after 1 second ${message}`));
 wait(3000).then((message) => console.log(`You'll see this after 3 seconds ${message}`));
