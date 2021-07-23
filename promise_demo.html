@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Demo</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    //1. call fetch and see asynchronous stuff
+    // fetch("http://localhost:3000/timer/4"); <-- Doc Rob's example server
+
+    //2. work with response from fetch call
+    fetch('https://api.github.com/users') // step 1: make fetch call to github...whenever the fetch is successful, the code in the "then" will run
+        .then(function(response) {
+            // console.log(response);
+            let aPromise = response.json(); //step 2: grab json data from response
+            console.log(aPromise);
+            return aPromise;
+        }).then(function (jsonData) { //.then function also returns a promise
+            console.log(jsonData) // step 3: do something with that json data
+    });
+
+</script>
+</body>
+</html>
