@@ -74,9 +74,41 @@ const longestEmail = users.reduce(function (currentLongestEmail, newEmail) {
 
 console.log(longestEmail);
 
+//Ry's way
+// let longestEmail = users.reduce(function (currentLongest, user) {
+//     if (user.email.length > currentLongest.email.length) {
+//         return user;
+//     } else {
+//         return currentLongest;
+//     }
+// }, users[0]);
+// console.log(longestEmail.email);
+
 //Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
-const allUsers = users.reduce((currentUsers, user) => {
-    return currentUsers + user.name;
+
+//Ry's way
+let nameString = users.reduce(function (accumulator, user) {
+    if (accumulator === '') {
+        return "Your instructors are: " + user.name;
+    } else {
+        return accumulator + ', ' + user.name;
+    }
 }, '');
-console.log(allUsers);
+
+console.log(nameString);
+
+let concatLangs = users.reduce(function (accumulator, user) {
+    return accumulator.concat(user.languages);
+}, []);
+
+console.log(concatLangs);
+
+let uniqueLangs = concatLangs.reduce(function (accumulator, currentValue) {
+    if (accumulator.indexOf(currentValue) === -1) {
+        accumulator.push(currentValue);
+    }
+    return accumulator;
+}, [])
+
+console.log(uniqueLangs);
