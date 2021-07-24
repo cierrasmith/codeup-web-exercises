@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24 Jul Practice</title>
+</head>
+<body>
+
+<script>
+  // write a function called whichNumsDivisibleByN
+  // print to console which #s from 1 to 100 are divisible by the given parameter
+
+  function whichNumsDivisibleByN(num) {
+    // step 1. loop from 1 to 100
+    // step 2. inside the loop, check if loop number % num === 0, then print loop number
+    for (let i = 1; i <= 100 ; i++) { //step 1
+      // step 2
+      if (i % num === 0) {
+        console.log(i);
+      }
+    }
+  }
+
+  // tell us which numbers from 1 to 100 are divisible by 10
+  whichNumsDivisibleByN(10);
+
+
+  // print which numbers between startNum and endNum are divisible by divisor
+  function whichNumsBetweenAandBAreDivisibleByN (startNum, endNum, divisor) {
+        for (let i = startNum; i <= endNum ; i++) { //step 1
+          // step 2
+          if (i % divisor === 0) {
+            console.log(i);
+          }
+        }
+  }
+
+  // tell us which numbers between 1 and 20 are divisible by 5
+  whichNumsBetweenAandBAreDivisibleByN(1, 20, 5);
+
+
+
+
+</script>
+</body>
+</html>
