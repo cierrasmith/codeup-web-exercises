@@ -2,23 +2,55 @@
 <html lang="en">
 <head>
   <title>Konami Code</title>
+  <style>
+
+    body {
+      text-align: center;
+    }
+
+    #konamiHeader {
+      border: 3px dotted black;
+      background-color: pink;
+    }
+
+    h2 {
+      border: 3px dotted black;
+      background-color: hotpink;
+    }
+
+    #konami {
+      visibility: hidden;
+    }
+
+  </style>
 </head>
 <body>
-<h1>Konami Code</h1>
+
+<div class="container">
+<h1 id="konamiHeader">Konami Code</h1>
+
+<div id="konami">
+  <img src="img/allow.gif" />
+</div>
+
+</div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
   "use strict";
 
-  var pressedKeys = "";
+  function popUp() {
+    if (confirm('Would you like to input the Konami Code?')) {
+      document.write('<h2>Type your code</h2>');
+    } else {
+      document.write('<h2>No cheats for you</h2>')
+    }
+  }
+
+  popUp();
 
 $(document).ready(function () {
 
-  function keyEventHandler (event) {
-    console.log(event);
-  }
-
-  $(document).keydown(keyEventHandler)
 
   var konamiKeys = {
     37: 'left',
@@ -32,7 +64,27 @@ $(document).ready(function () {
 
   var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter']
 
-  var startingKonami = 0;
+  var konamiPosition = 0;
+
+  $(document).keydown(function(e) {
+
+    var key = konamiKeys[e.keyCode];
+    var requiredKey = konamiCode[konamiPosition];
+
+
+    if (key === requiredKey) {
+      konamiPosition++;
+
+      if (konamiPosition === konamiCode.length) {
+        activateCode();
+        konamiPosition = 0;
+      }
+    }
+  });
+
+  function activateCode() {
+    document.getElementById("konami").style.visibility = 'visible';
+  }
 
 
 
