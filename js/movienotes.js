@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-    // const serverURL = `https://alluring-nutritious-calendula.glitch.me/movies`
+    const serverURL = `https://alluring-nutritious-calendula.glitch.me/movies`
 
     function AJAXRequest(URL, method = `GET`, data) {// sim to ajax request
         const options = {
@@ -30,35 +30,36 @@ $(document).ready(function () {
             data.forEach(function (movie) {
 
                 html = `
-                     <div className="card">
-                    <img src=${movie.poster} className="card-img-top" alt="movie poster">
-                        <div className="card-body">
-                            <h5 className="card-title">${movie.title}</h5>
-                            <p className="card-text">Rating: ${movie.rating}</p><!-- template string explicit {}-->
-                            <p className="card-text">Plot: ${movie.plot}</p>
-                            <a href="#" data-id="${movie.id}" class="btn btn-primary editButton">Edit Movie</a>
-                            <a href="#" data-id="${movie.id}" class="btn btn-primary deleteButton">Delete Movie</a>
-                        </div>
-                </div>`
+                     <div className="card" class="col my-col"><!-- trying to dynamically add in columns to place each card next to each other-->
+                           <img src=${movie.poster} className="card-img-top" alt="movie poster">
+                            <div className="card-body">
+                                <h5 className="card-title">${movie.title}</h5>
+                                <p className="card-text">Rating: ${movie.rating}</p><!-- template string explicit {}-->
+                                <p className="card-text">Plot: ${movie.plot}</p>
+                                <a href="#" data-id="${movie.id}" class="btn btn-primary editButton">Edit Movie</a>
+                                <a href="#" data-id="${movie.id}" class="btn btn-primary deleteButton">Delete Movie</a>
+                            </div>
+                    </div>`
 
                 $('#allMovies').append(html);
             })
             addEventListeners()
         })
-        $('#loading').hide();
+        $('#loading').hide(); //change this to #loading on project
     }
 
     setTimeout(getAllMovies, 2000);
 
-    // --------- functionality of the delete button here --------
+    // --------- EventListener functionality buttons here --------
     function addEventListeners() {
-        $(`.deleteButton`).click(function (e) {
+        $(`.deleteButton`).click(function (e) {// delete funciton
             e.preventDefault();
             const movieIdToDelete = $(this).attr(`data-id`);
             console.log(movieIdToDelete);
             deleteMovie(movieIdToDelete);
         })
-        $('#submit-movie').click(function (e) {
+
+        $('#submit-movie').click(function (e) {// add movie function
             e.preventDefault();
             let movieTitle = $('#title-input').val();
             let moviePlot = $("#plot-input").val();
@@ -67,11 +68,30 @@ $(document).ready(function () {
             addMovie(addedMovie);
             console.log(addMovie);
         })
+
+        $('.editButton').click(function (e) {// edit movie info/ rating function
+            e.preventDefault();
+            const movieId = $(this).attr(`data-id`);
+            console.log(movieId);
+
+            $('#editMovieModal').modal('show');
+            $('#submit-edit-changes').click(function (e) {
+                e.preventDefault();
+                let updatedMovieTitle = $('#updated-movie-title').val();
+                console.log(updatedMovieTitle)
+                let updatedMoviePlot = $('#updated-movie-plot').val();
+                let updatedMovieRating = $('#updated-movie-rating').val();
+                let updatedMovie = {id: movieId, title: updatedMovieTitle, plot: updatedMoviePlot, rating: updatedMovieRating}
+
+                editMovie(updatedMovie)
+                    $('#editMovieModal').modal('hide');
+                    getAllMovies();
+                })
+
+            });
+
     }
 
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
 
 
 // ----------- Get SINGLE MOVIE INFORMATION ------------
@@ -100,12 +120,10 @@ $(document).ready(function () {
 
 // ----------- UPDATE MOVIE INFORMATION ------------
 
-    function updateMovie(id) {
-        AJAXRequest(`${serverURL}/${id}`, 'PUT', {
-            id: id,
-            title: 'updated movies',
-            year: 2021
-        }).then(responseData => console.log(responseData))
+    function editMovie(id) {
+        AJAXRequest(`${serverURL}/${id}`,`PUT`, {
+            title: "updatedMovieTitle"
+        }).then(getAllMovies)
     }
 
 // updateMovie(10);
@@ -146,7 +164,7 @@ $(document).ready(function () {
 //     fetch(serverURL, options)
 //         .then( response => console.log(response) ) /* review was created successfully */
 //         .catch( error => console.error(error) ); /* handle errors */
-//
+
 //
 //
 //     function AJAXRequest(URL, method = `GET`, data){// sim to ajax request
